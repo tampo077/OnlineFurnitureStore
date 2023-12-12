@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "441604600791",
+    "firebase_url": "https://onlinefurniturestore-b20df-default-rtdb.firebaseio.com",
+    "project_id": "onlinefurniturestore-b20df",
+    "storage_bucket": "onlinefurniturestore-b20df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441604600791:android:b74231ba97ef6b1479d192",
+        "android_client_info": {
+          "package_name": "com.test.onlinefurniturestore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyBBedRjJ7mihUuvyd0TegBUX9fp9NLNI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

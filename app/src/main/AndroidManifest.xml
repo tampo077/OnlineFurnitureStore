@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.test.onlinefurniturestore">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OnlineFurnitureStore"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity_order_detail"
+            android:exported="false"
+            android:label="@string/title_activity_order_detail"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_payment"
+            android:exported="false"
+            android:label="@string/title_activity_payment"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_cart"
+            android:exported="false"
+            android:label="@string/title_activity_cart"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_product_detail"
+            android:exported="false"
+            android:label="@string/title_activity_product_detail"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_products"
+            android:exported="false"
+            android:label="@string/title_activity_products"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_edit_products"
+            android:exported="false"
+            android:label="@string/title_activity_edit_products"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_view_products"
+            android:exported="false"
+            android:label="@string/title_activity_view_products"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_admin_panel"
+            android:exported="false"
+            android:label="@string/title_activity_admin_panel"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_add_product"
+            android:exported="false"
+            android:label="@string/title_activity_add_product"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_signup"
+            android:exported="false"
+            android:label="@string/title_activity_signup"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.OnlineFurnitureStore" />
+        <activity
+            android:name=".activity_login"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.OnlineFurnitureStore">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

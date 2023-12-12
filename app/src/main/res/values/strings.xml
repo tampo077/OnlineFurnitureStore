@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">OnlineFurnitureStore</string>
+    <string name="title_activity_login">activity_login</string>
+    <string name="title_activity_signup">activity_signup</string>
+    <string name="title_activity_add_product">activity_add_product</string>
+    <string name="title_activity_admin_panel">activity_admin_panel</string>
+    <string name="title_activity_view_products">activity_view_products</string>
+    <string name="title_activity_edit_products">activity_edit_products</string>
+    <string name="title_activity_products">activity_products</string>
+    <string name="title_activity_product_detail">activity_product_detail</string>
+    <string name="title_activity_cart">activity_cart</string>
+    <string name="title_activity_payment">activity_payment</string>
+    <string name="title_activity_order_detail">activity_order_detail</string>
+</resources>
