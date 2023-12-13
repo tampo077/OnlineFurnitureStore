@@ -1,5 +1,7 @@
 package com.test.onlinefurniturestore
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -76,8 +78,15 @@ fun ProductDetailScreen(db:SqliteDb,
                     val isNewProduct = db.add_to_cart(productId, productName.orEmpty(), productPrice.toDouble(), productImageUrl.orEmpty())
                     if (isNewProduct) {
                         Toast.makeText(context, "Product added to cart", Toast.LENGTH_SHORT).show()
+
+                        if(context is Activity){
+                            context.finish()
+                        }
                     } else {
                         Toast.makeText(context, "Product quantity updated in cart", Toast.LENGTH_SHORT).show()
+                        if(context is Activity){
+                            context.finish()
+                        }
                     }
             },
             modifier = Modifier

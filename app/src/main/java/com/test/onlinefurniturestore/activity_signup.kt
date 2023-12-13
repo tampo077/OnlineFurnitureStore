@@ -84,12 +84,11 @@ fun signup() {
             colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.Transparent
             )
         )
-
         Spacer(modifier = Modifier.height(8.dp))
         TextField(
             value = textPhone,
             onValueChange = {textPhone = it},
-            label = { Text("Phone Number ") },
+            label = { Text("Phone Number") },
             modifier = Modifier.fillMaxWidth(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
             colors = TextFieldDefaults.textFieldColors(

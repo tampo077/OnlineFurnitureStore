@@ -1,5 +1,6 @@
 package com.test.onlinefurniturestore
 
+import android.app.Activity
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
@@ -179,9 +180,15 @@ fun edit_product(pid: String, p_name: String, p_price: String, p_category: Strin
                                   onSuccess = {
                                       show_dialog = false
                                       Toast.makeText(context,"Update Success",Toast.LENGTH_LONG).show()
+                                      if(context is Activity){
+                                          context.finish()
+                                      }
                                   },
                                   onFailure = { exception ->
                                       show_dialog = false
+                                      if(context is Activity){
+                                          context.finish()
+                                      }
                                       Toast.makeText(context,"Update Failed",Toast.LENGTH_LONG).show()
                                   }
                               )
@@ -208,7 +215,7 @@ fun edit_product(pid: String, p_name: String, p_price: String, p_category: Strin
 fun update_product(productId: String, name: String, price: String, category: String, imageUri: String, context: Context) {
 
         val product = Product(productId, name, price, category, imageUri.toString())
-        FirebaseDatabase.getInstance().reference.child("products").child(productId)
+        FirebaseDatabase.getInstance().reference.child("products").child(category).child(productId)
             .setValue(product)
             .addOnSuccessListener {
                 Toast.makeText(context, "Product updated successfully", Toast.LENGTH_LONG).show()

@@ -32,6 +32,7 @@ class activity_admin_panel : ComponentActivity() {
                     admin_panel_composable()
                 }
             }
+
         }
     }
 }
@@ -45,7 +46,7 @@ fun admin_panel_composable() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Admin Panel",
+            text = "Admin Panel ",
             style = MaterialTheme.typography.h4,
             modifier = Modifier.padding(bottom = 16.dp)
         )

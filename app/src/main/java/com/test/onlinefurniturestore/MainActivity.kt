@@ -145,7 +145,7 @@ fun HomeScreen() {
 
     LaunchedEffect(key1 = Unit) {
         allProducts = fetchAllProducts()
-        recommendedProducts = allProducts.shuffled().take(4)  // Select 4 random products
+        recommendedProducts = allProducts.shuffled().take(2)
     }
 
     val lifecycleOwner = LocalLifecycleOwner.current
@@ -203,20 +203,24 @@ fun HomeScreen() {
                         placeholder = { Text("Search product") },
                         trailingIcon = {
                             IconButton(onClick = {
-                                isFetching=true
-                                searchProducts(textSearch) { results ->
-                                    searchResults = results
-                                    isFetching=false
+                                if (textSearch.isBlank()) {
+                                    Toast.makeText(context, "Please enter a search term.", Toast.LENGTH_LONG).show()
+                                } else {
+                                    isFetching = true
+                                    searchProducts(textSearch) { results ->
+                                        searchResults = results
+                                        isFetching = false
 
-                                    val intent = Intent(context, activity_products::class.java).apply {
-                                        putExtra("searchResults", ArrayList(searchResults))
+                                        val intent = Intent(context, activity_products::class.java).apply {
+                                            putExtra("searchResults", ArrayList(searchResults))
+                                        }
+                                        context.startActivity(intent)
                                     }
-                                    context.startActivity(intent)
-
                                 }
                             }) {
                                 Icon(Icons.Default.Search, contentDescription = "Search")
                             }
+
 
                         },
                         modifier = Modifier
@@ -263,8 +267,7 @@ fun HomeScreen() {
                     Text(
                         text = "THE SALE OF THE YEAR\nBLACK FRIDAY",
                         style = MaterialTheme.typography.h5.copy(color = Color.White),
-                        textAlign = TextAlign.Center,
-                        fontWeight = FontWeight.Bold
+                        textAlign = TextAlign.Center
                     )
                 }
             }
@@ -323,9 +326,8 @@ fun HomeScreen() {
 fun ProductGrid(products: List<Product>) {
     val context = LocalContext.current
 
-    // Calculate the height needed for the grid
-    val rows = (products.size + 1) / 2  // Assuming 2 columns
-    val gridHeight = 220.dp * rows  // Adjust the height per item as needed
+    val rows = (products.size + 1) / 2
+    val gridHeight = 220.dp * rows
 
     Box(modifier = Modifier.height(gridHeight)) {
         LazyVerticalGrid(
@@ -650,6 +652,7 @@ private suspend fun fetchAllProducts(): List<Product> {
             }
         }
     } catch (e: Exception) {
+        System.out.println("Exceptionnn"+e.toString())
         listOf()
     }
 }
