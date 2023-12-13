@@ -83,7 +83,7 @@ fun signup() {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
             colors = TextFieldDefaults.textFieldColors(backgroundColor = Color.Transparent
             )
-        )
+        ) 
         Spacer(modifier = Modifier.height(8.dp))
         TextField(
             value = textPhone,
