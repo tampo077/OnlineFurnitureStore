@@ -94,7 +94,7 @@ fun signup() {
             colors = TextFieldDefaults.textFieldColors(
                 backgroundColor = Color.Transparent
             )
-        )
+        ) 
         Spacer(modifier = Modifier.height(8.dp))
         TextField(
             value = textAddress,
