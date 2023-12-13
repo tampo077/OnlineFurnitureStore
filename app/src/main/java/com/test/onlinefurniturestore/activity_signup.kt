@@ -97,7 +97,7 @@ fun signup() {
         ) 
         Spacer(modifier = Modifier.height(8.dp))
         TextField(
-            value = textAddress,
+            value = textAddress, 
             onValueChange = {textAddress = it},
             label = { Text("Address") },
             modifier = Modifier.fillMaxWidth(),
